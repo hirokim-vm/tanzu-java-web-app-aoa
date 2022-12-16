@@ -14,8 +14,6 @@ accelerator:
     label: Prefix for the container image repository
     defaultValue: dev.local
     required: true
-  imports:
-  - name: tap-workload
 
 engine:
   onConflict: NWayDiff
@@ -52,7 +50,3 @@ engine:
         with: "#artifactId"
     - type: RewritePath
       rewriteTo: "#filename"
-  - include: [ "config/workload.yaml"]
-    chain:
-    - type: InvokeFragment
-      reference: tap-workload
